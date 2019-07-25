@@ -41,6 +41,13 @@ gem 'haml-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
+
+# user認証
+gem 'devise'
+
+# 環境変数
+gem 'dotenv-rails'
+
 gem 'pg', group: :production
 
 group :development, :test do

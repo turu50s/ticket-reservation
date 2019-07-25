@@ -8,4 +8,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      %nav
+        - if user_signed_in?
+          %strong= link_to 'Home', :root
+          = link_to 'Profile change', :edit_user_registration
+          = link_to 'Logged out', :destroy_user_session, method: :delete
+        - else
+          = link_to 'Sign up', :new_user_registration
+          = link_to 'Logged in', :new_user_session
+    %p.notice= notice
+    %p.alert= alert
+
     = yield
